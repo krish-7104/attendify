@@ -209,6 +209,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 14,
     width: "90%",
+    elevation: 20,
+    shadowColor: "#18181840",
   },
   indiSubName: {
     fontSize: 16,

@@ -133,6 +133,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     width: "100%",
+    elevation: 20,
+    shadowColor: "#18181840",
   },
   subName: {
     fontSize: 16,

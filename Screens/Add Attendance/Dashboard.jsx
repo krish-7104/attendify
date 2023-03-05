@@ -16,6 +16,8 @@ const Dashboard = () => {
     });
     if (present !== 0) {
       setOverall(((present * 100) / (absent + present)).toPrecision(4));
+    } else {
+      setOverall(0);
     }
   }, [data]);
 
@@ -37,6 +39,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 10,
     borderRadius: 10,
+    elevation: 20,
+    shadowColor: "#18181840",
   },
   title: {
     fontFamily: "Poppins-Medium",
