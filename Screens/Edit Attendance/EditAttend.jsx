@@ -121,7 +121,6 @@ const EditAttend = ({ navigation }) => {
       { cancelable: false }
     );
   };
-
   return (
     <View style={styles.container}>
       <ChangeDate

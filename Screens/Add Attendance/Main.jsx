@@ -105,7 +105,7 @@ const Main = ({ navigation }) => {
           {
             id: id,
             name: subject.name,
-            present: [...subject.present, newDate.toString().slice(0, 24)],
+            present: [...subject.present, date.toString().slice(0, 15)],
             absent: subject.absent,
             cancel: subject.cancel ? subject.cancel : [],
           },
@@ -119,7 +119,7 @@ const Main = ({ navigation }) => {
             id: id,
             name: subject.name,
             present: subject.present,
-            absent: [...subject.absent, newDate.toString().slice(0, 24)],
+            absent: [...subject.absent, date.toString().slice(0, 15)],
             cancel: subject.cancel ? subject.cancel : [],
           },
         ])
@@ -134,7 +134,7 @@ const Main = ({ navigation }) => {
               name: subject.name,
               present: subject.present,
               absent: subject.absent,
-              cancel: [newDate.toString().slice(0, 15)],
+              cancel: [date.toString().slice(0, 15)],
             },
           ])
         );
@@ -147,7 +147,7 @@ const Main = ({ navigation }) => {
               name: subject.name,
               present: subject.present,
               absent: subject.absent,
-              cancel: [...subject.cancel, newDate.toString().slice(0, 24)],
+              cancel: [...subject.cancel, date.toString().slice(0, 15)],
             },
           ])
         );
@@ -173,7 +173,7 @@ const Main = ({ navigation }) => {
           />
           <ScrollView
             style={styles.scrollView}
-            contentContainerStyle={{ alignItems: "center" }}
+            contentContainerStyle={{ alignItems: "center", flex: 1 }}
           >
             {attendance &&
               attendance.map((subject) => {

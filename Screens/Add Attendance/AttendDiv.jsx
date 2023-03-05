@@ -116,6 +116,8 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "flex-start",
     marginBottom: 12,
+    elevation: 20,
+    shadowColor: "#18181840",
   },
   textArea: {
     display: "flex",

@@ -16,6 +16,7 @@ import Setting from "./Screens/Settings/Setting";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from "react";
+import Analysis from "./Screens/Analysis/Analysis";
 export default function App() {
   const [fontsLoaded] = useFonts({
     "Poppins-Medium": require("./assets/fonts/Poppins-Medium.ttf"),
@@ -65,6 +66,7 @@ export default function App() {
         >
           <Drawer.Screen name="Home" component={Main} />
           <Drawer.Screen name="Subject" component={Subject} />
+          <Drawer.Screen name="Analysis" component={Analysis} />
           <Drawer.Screen name="Edit Attendance" component={EditAttend} />
           <Drawer.Screen name="Reset App" component={Setting} />
         </Drawer.Navigator>

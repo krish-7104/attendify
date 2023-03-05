@@ -13,6 +13,7 @@ import { setValueHandler } from "../../redux/actions";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { StatusBar } from "expo-status-bar";
 import { useLayoutEffect } from "react";
+import { useEffect } from "react";
 const Setting = ({ navigation }) => {
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -60,6 +61,7 @@ const Setting = ({ navigation }) => {
     ToastAndroid.show("Data Cleared!", ToastAndroid.SHORT);
     navigation.navigate("Home");
   };
+
   return (
     <View style={styles.container}>
       <View style={styles.warnDiv}>
