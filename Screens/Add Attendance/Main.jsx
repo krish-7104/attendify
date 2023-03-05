@@ -173,7 +173,7 @@ const Main = ({ navigation }) => {
           />
           <ScrollView
             style={styles.scrollView}
-            contentContainerStyle={{ alignItems: "center" }}
+            contentContainerStyle={{ alignItems: "center", flex: 1 }}
           >
             {attendance &&
               attendance.map((subject) => {
