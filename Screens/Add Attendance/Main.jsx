@@ -15,6 +15,7 @@ import ChangeDate from "../Components/ChangeDate";
 import AttendDiv from "./AttendDiv";
 import { StatusBar } from "expo-status-bar";
 import Dashboard from "./Dashboard";
+import { Ionicons } from "@expo/vector-icons";
 const Main = ({ navigation }) => {
   const [open, setOpen] = useState(false);
   const [date, setDate] = useState("");
@@ -173,7 +174,7 @@ const Main = ({ navigation }) => {
           />
           <ScrollView
             style={styles.scrollView}
-            contentContainerStyle={{ alignItems: "center", flex: 1 }}
+            contentContainerStyle={{ alignItems: "center" }}
           >
             {attendance &&
               attendance.map((subject) => {
@@ -210,49 +211,57 @@ const Main = ({ navigation }) => {
               contentContainerStyle={{ alignItems: "center" }}
             >
               {attendance &&
-                attendance.map((item) => {
-                  return (
-                    <View key={item.id} style={styles.indiSubArea}>
-                      <Text style={styles.indiSubName}>{item.name}</Text>
-                      <TouchableOpacity
-                        onPress={() => addAttendanceHandler("present", item.id)}
-                        activeOpacity={0.4}
-                        style={{
-                          backgroundColor: "#4ade80",
-                          padding: 3,
-                          borderRadius: 4,
-                          marginRight: 10,
-                        }}
-                      >
-                        <AntDesign name="check" size={16} color="black" />
-                      </TouchableOpacity>
-                      <TouchableOpacity
-                        onPress={() => addAttendanceHandler("absent", item.id)}
-                        activeOpacity={0.4}
-                        style={{
-                          backgroundColor: "#f87171",
-                          padding: 3,
-                          borderRadius: 4,
-                          marginRight: 10,
-                        }}
-                      >
-                        <AntDesign name="close" size={16} color="black" />
-                      </TouchableOpacity>
-                      <TouchableOpacity
-                        onPress={() => addAttendanceHandler("cancel", item.id)}
-                        activeOpacity={0.4}
-                        style={{
-                          backgroundColor: "#60a5fa",
-                          padding: 3,
-                          borderRadius: 4,
-                          marginRight: 10,
-                        }}
-                      >
-                        <AntDesign name="minus" size={16} color="black" />
-                      </TouchableOpacity>
-                    </View>
-                  );
-                })}
+                attendance
+                  .sort((a, b) => a.id > b.id)
+                  .map((item) => {
+                    return (
+                      <View key={item.id} style={styles.indiSubArea}>
+                        <Text style={styles.indiSubName}>{item.name}</Text>
+                        <TouchableOpacity
+                          onPress={() =>
+                            addAttendanceHandler("present", item.id)
+                          }
+                          activeOpacity={0.4}
+                          style={{
+                            backgroundColor: "#4ade80",
+                            padding: 3,
+                            borderRadius: 4,
+                            marginRight: 10,
+                          }}
+                        >
+                          <AntDesign name="check" size={16} color="black" />
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                          onPress={() =>
+                            addAttendanceHandler("absent", item.id)
+                          }
+                          activeOpacity={0.4}
+                          style={{
+                            backgroundColor: "#f87171",
+                            padding: 3,
+                            borderRadius: 4,
+                            marginRight: 10,
+                          }}
+                        >
+                          <AntDesign name="close" size={16} color="black" />
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                          onPress={() =>
+                            addAttendanceHandler("cancel", item.id)
+                          }
+                          activeOpacity={0.4}
+                          style={{
+                            backgroundColor: "#60a5fa",
+                            padding: 3,
+                            borderRadius: 4,
+                            marginRight: 10,
+                          }}
+                        >
+                          <AntDesign name="minus" size={16} color="black" />
+                        </TouchableOpacity>
+                      </View>
+                    );
+                  })}
             </ScrollView>
           )}
         </>
@@ -280,6 +289,7 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     width: "100%",
+    marginBottom: 10,
   },
   addArea: {
     padding: 10,

@@ -15,10 +15,13 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useDispatch, useSelector } from "react-redux";
 import { setValueHandler } from "../../redux/actions";
 import { StatusBar } from "expo-status-bar";
+import { Ionicons } from "@expo/vector-icons";
+
 const Subject = ({ navigation }) => {
   const [input, setInput] = useState("");
   const attendance = useSelector((state) => state);
   const dispatch = useDispatch();
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     getAttendanceData();
@@ -53,7 +56,9 @@ const Subject = ({ navigation }) => {
     try {
       const jsonValue = await AsyncStorage.getItem("attendance");
       if (jsonValue !== null) {
-        dispatch(setValueHandler(JSON.parse(jsonValue)));
+        dispatch(
+          setValueHandler(JSON.parse(jsonValue).sort((a, b) => a.id > b.id))
+        );
       } else {
         dispatch(setValueHandler([]));
       }
@@ -89,6 +94,7 @@ const Subject = ({ navigation }) => {
       );
       setInput("");
       Keyboard.dismiss();
+      setOpen(!open);
       ToastAndroid.show("Subject Added!", ToastAndroid.SHORT);
     }
   };
@@ -163,6 +169,7 @@ const Subject = ({ navigation }) => {
           <AntDesign name="plus" size={24} color="black" />
         </TouchableOpacity>
       </View>
+
       <StatusBar style="dark" />
     </View>
   );
@@ -180,7 +187,6 @@ const styles = StyleSheet.create({
   subListView: {
     width: "100%",
     flex: 1,
-    marginBottom: 10,
   },
   btnText: {
     color: "#fff",
@@ -211,6 +217,7 @@ const styles = StyleSheet.create({
     width: "90%",
     elevation: 20,
     shadowColor: "#18181840",
+    marginBottom: 10,
   },
   indiSubName: {
     fontSize: 16,

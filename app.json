@@ -2,7 +2,7 @@
   "expo": {
     "name": "Attendify",
     "slug": "attendify",
-    "version": "1.1.0",
+    "version": "2.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -29,8 +29,5 @@
         "projectId": "69222999-16b6-45d5-8eb9-f8de7371b9ee"
       }
     }
-  },
-  "react-native-google-mobile-ads": {
-    "android_app_id": "ca-app-pub-6116422903517331~7908687673"
   }
 }

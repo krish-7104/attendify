@@ -35,7 +35,7 @@ const AttendDiv = (props) => {
           <View
             style={{
               display: "flex",
-              justifyContent: "flex-start",
+              justifyContent: "flex-end",
               alignItems: "center",
               flexDirection: "row",
               width: "60%",
@@ -122,7 +122,6 @@ const styles = StyleSheet.create({
   textArea: {
     display: "flex",
     justifyContent: "flex-start",
-    flex: 1,
   },
   attendShow: {
     display: "flex",
@@ -139,6 +138,7 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins-Medium",
   },
   subData: {
+    color: "#181818",
     fontSize: 14,
     letterSpacing: 1,
     width: "40%",
