@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
+
 const AttendDiv = (props) => {
   if (
     props.present.includes(props.date) ||
@@ -11,11 +12,7 @@ const AttendDiv = (props) => {
       <View style={styles.div}>
         <View style={styles.textArea}>
           <Text style={styles.subName}>
-            <MaterialCommunityIcons
-              name="bookshelf"
-              size={20}
-              color="#181818"
-            />
+            <Feather name="book" size={20} color="#181818" />
             &nbsp;
             {props.subject}
           </Text>
@@ -116,8 +113,6 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "flex-start",
     marginBottom: 12,
-    elevation: 20,
-    shadowColor: "#18181840",
   },
   textArea: {
     display: "flex",

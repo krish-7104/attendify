@@ -8,7 +8,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { Provider } from "react-redux";
 import { mystore } from "./redux/store";
 import { Alert, Linking } from "react-native";
-import { useEffect } from "react";
 import Main from "./Screens/Add Attendance/Main";
 import Subject from "./Screens/Add Subject/Subject";
 import EditAttend from "./Screens/Edit Attendance/EditAttend";
@@ -17,6 +16,7 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from "react";
 import Analysis from "./Screens/Analysis/Analysis";
+
 export default function App() {
   const [fontsLoaded] = useFonts({
     "Poppins-Medium": require("./assets/fonts/Poppins-Medium.ttf"),
@@ -45,14 +45,9 @@ export default function App() {
         <DrawerItemList {...props} />
         <DrawerItem
           label="About Developer"
-          onPress={() => Linking.openURL("https://www.krishjotaniya.live")}
+          onPress={() => Linking.openURL("")}
         />
-        <DrawerItem
-          label="Feedback"
-          onPress={() =>
-            Linking.openURL("https://www.krishjotaniya.live/contactme")
-          }
-        />
+        <DrawerItem label="Feedback" onPress={() => Linking.openURL("")} />
       </DrawerContentScrollView>
     );
   }

@@ -13,7 +13,7 @@ import { setValueHandler } from "../../redux/actions";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { StatusBar } from "expo-status-bar";
 import { useLayoutEffect } from "react";
-import { useEffect } from "react";
+
 const Setting = ({ navigation }) => {
   useLayoutEffect(() => {
     navigation.setOptions({

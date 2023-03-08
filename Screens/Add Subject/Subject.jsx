@@ -213,15 +213,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     borderRadius: 6,
     alignItems: "center",
-    marginTop: 14,
+    marginTop: 12,
     width: "90%",
-    elevation: 20,
-    shadowColor: "#18181840",
-    marginBottom: 10,
   },
   indiSubName: {
-    fontSize: 16,
-    width: "90%",
+    fontSize: 14,
+    width: "86%",
     fontFamily: "Poppins-Medium",
   },
   deleteBtn: {

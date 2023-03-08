@@ -3,7 +3,6 @@ import React from "react";
 import { useLayoutEffect } from "react";
 import Dashboard from "../Add Attendance/Dashboard";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
 const Analysis = ({ navigation }) => {
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -64,8 +63,21 @@ const Analysis = ({ navigation }) => {
                   alignItems: "center",
                 }}
               >
-                <View>
-                  <Text style={styles.subTitle}>
+                <View
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
+                  }}
+                >
+                  <View
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      flexDirection: "row",
+                    }}
+                  >
                     <View
                       key={index}
                       style={{
@@ -73,12 +85,22 @@ const Analysis = ({ navigation }) => {
                         paddingHorizontal: 6,
                         paddingVertical: 6,
                         borderRadius: 30,
+                        marginRight: 4,
                       }}
-                    ></View>{" "}
-                    Present: {subject.present.length}/
-                    {subject.present.length + subject.absent.length}
-                  </Text>
-                  <Text style={styles.subTitle}>
+                    ></View>
+                    <Text style={styles.subTitle}>
+                      Present: {subject.present.length}/
+                      {subject.present.length + subject.absent.length}
+                    </Text>
+                  </View>
+                  <View
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      flexDirection: "row",
+                    }}
+                  >
                     <View
                       key={index}
                       style={{
@@ -86,12 +108,22 @@ const Analysis = ({ navigation }) => {
                         paddingHorizontal: 6,
                         paddingVertical: 6,
                         borderRadius: 30,
+                        marginRight: 4,
                       }}
-                    ></View>{" "}
-                    Absent: {subject.absent.length}/
-                    {subject.present.length + subject.absent.length}
-                  </Text>
-                  <Text style={styles.subTitle}>
+                    ></View>
+                    <Text style={styles.subTitle}>
+                      Absent: {subject.absent.length}/
+                      {subject.present.length + subject.absent.length}
+                    </Text>
+                  </View>
+                  <View
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      flexDirection: "row",
+                    }}
+                  >
                     <View
                       key={index}
                       style={{
@@ -99,10 +131,13 @@ const Analysis = ({ navigation }) => {
                         paddingHorizontal: 6,
                         paddingVertical: 6,
                         borderRadius: 30,
+                        marginRight: 4,
                       }}
-                    ></View>{" "}
-                    Cancel: {subject.absent.length}
-                  </Text>
+                    ></View>
+                    <Text style={styles.subTitle}>
+                      Cancel: {subject.absent.length}
+                    </Text>
+                  </View>
                 </View>
                 <Text style={styles.totalPercentage}>
                   {subject.present.length === 0 && subject.absent.length === 0

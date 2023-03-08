@@ -15,7 +15,6 @@ import ChangeDate from "../Components/ChangeDate";
 import AttendDiv from "./AttendDiv";
 import { StatusBar } from "expo-status-bar";
 import Dashboard from "./Dashboard";
-import { Ionicons } from "@expo/vector-icons";
 const Main = ({ navigation }) => {
   const [open, setOpen] = useState(false);
   const [date, setDate] = useState("");
